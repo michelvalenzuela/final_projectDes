@@ -26,15 +26,15 @@
     <div class="row">
 
         <div class="col-8">
-            Left Col (wide)
+        <%= render partial: "posts/list", locals: { posts:@posts } %>
         </div>
         <div class="col-4">
             <p class="h5 mb-4"> Up And Coming Communities</p>
             <div class="card">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <% @communities.each do |community| %>
+                    <li class="list-group-item"><%= link_to community.name, community_path(community) %></li>
+                    <% end %>
                 </ul>
             </div>
             <%= link_to "View All", "", class: "btn btn-primary mt-3"%>
