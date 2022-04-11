@@ -2,12 +2,21 @@
     <div class="row align-items-center">
         <div class="col-12 pt-3 pb-3 mb-4 border-bottom">
             <div class="float-end">
-                <% if account_signed_in? %>
-                    <%= link_to "sign out", destroy_account_session_path, method: :delete,class: "btn btn-outline-primary" %>
-                <% else %>
-                    <%= link_to "log in", new_account_session_path, class: "btn btn-outline-primary" %>
-                    <%= link_to "sign up", new_account_registration_path, class: "btn btn-primary" %>
-                <% end %>
+              <% if account_signed_in? %>
+            <div class="dropdown show float-end">
+            <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_account.username %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <%= link_to "Profile", profile_path(current_account.username), class: "dropdown-item" %>
+                <%= link_to "Settings", edit_account_registration_path, class: "dropdown-item" %>
+                <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+            </div>
+            <% else %>
+            <%= link_to "Log In", new_account_session_path, class: "btn btn-outline-primary" %>
+            <%= link_to "Sign Up", new_account_registration_path, class: "btn btn-primary" %>
+            <% end %>
             </div>
             <p class="h3"><%= link_to "Lettdit", root_path %></p>
         </div>
