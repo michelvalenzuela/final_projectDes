@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+import "chartkick/chart.js"
 require("bootstrap")
 require("../includes/vote.js")
 

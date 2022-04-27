@@ -2,5 +2,16 @@
 <div class="comment">
   <%= link_to comment.account.full_name, profile_path(comment.account.username) %>
   <%= simple_format comment.message %>
+   <%if comment.account_id == current_account.id %>
+        <%= link_to comment, method: :delete, data: { confirm: "are you sure u want to delete this comment?"} do %>
+           <span class="icon">
+          <i class="fa fa-trash-o" aria-hidden="true"><p> </p> </i>                             
+         </span>  
+        <%   end    %>
+      <% else %>
+    <p class="is-hidden">u cant</p>
+   <%end%>
+  
 </div>
 <% end %>
+ 

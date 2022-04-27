@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     before_action :authenticate_account!, except:  [ :index, :show ]
-    before_action :set_post, only: [:show]
+    before_action :set_post, only: [:show, :destroy]
     before_action :auth_subscriber, only: [:new]
     def index
       @posts = Post.all
@@ -25,6 +25,14 @@ class PostsController < ApplicationController
       else
         @community = Community.find(params[:community_id])
         render :new
+      end
+    end
+
+    def destroy
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+        format.json { head :no_content }
       end
     end
   

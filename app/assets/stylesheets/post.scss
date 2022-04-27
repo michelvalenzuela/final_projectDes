@@ -1,9 +1,10 @@
+
 .upvote, .downvote {
     display: block;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #000;
+    color: rgb(238, 238, 238);
   
     &.active {
       color: #ff0000;

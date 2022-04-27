@@ -1,24 +1,30 @@
-<% unless account_signed_in? %>
-  <div class="row">
+  <div class="row ">
     <div class="col">
-      <p class="h5">Trending Today</p>
+    <h3 style="color:white">About</h3>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-3">
-      Trending 1
-    </div>
-    <div class="col-sm-3">
-      Trending 2
-    </div>
-    <div class="col-sm-3">
-      Trending 3
-    </div>
-    <div class="col-sm-3">
-      Trending 4
+  <div class="container py-3 ">
+    <div class="card">
+      <div class="row ">
+        <div class="col-md-4">
+            <img src="https://media.giphy.com/avatars/desafiolatam/ETTa109iDjcD.png" class="w-100">
+          </div>
+          <div class="col-md-8 px-3">
+            <div class="card-block px-3">
+              <h4 class="card-title">Sobre Este Proyecto</h4>
+              <p class="card-text"> Hola Soy Michel Valenzuela, El creador de este proyecto </p>
+              <p class="card-text">este es mi proyecto final del bootcamp de DesafioLatam FullStack RoR</p>
+              <p class="card-text">Este es un foro tipo reddit en donde se crean comunidades</p>
+              <p class="card-text">puedes crear posts en estas comunidades votar en estos posts, e interactuar en ellos a travez de comentar..</p>
+              <p class="card-text">Todo esto fue hecho para probar mis conocimientos y con razones de probar gemas y metodos..</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
+  </div>
 <div class="row">
   <div class="col">
     <p class="h5">Popular Posts</p>
@@ -26,19 +32,21 @@
 </div>
 <div class="row">
   <div class="col-8">
+
     <%= render partial: "posts/list", locals: { posts:@posts } %>
   </div>
-  <div class="col-4">
+  <div class="col-4 d-none d-sm-none d-md-block">
     <p class="h5 mb-4">Up and coming Communities</p>
 
-    <div class="card">
+    <div class="card m5">
       <ul class="list-group list-group-flush">
         <% @communities.each do |community| %>
           <li class="list-group-item"><%= link_to community.name, community_path(community) %></li>
         <% end %>
       </ul>
     </div>
-
+    <%= paginate @communities%>
     <%= link_to "View all", communities_path, class: "btn btn-primary mt-4" %>
   </div>
 </div>
+

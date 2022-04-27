@@ -1,18 +1,31 @@
-<% posts.each do |post| %>
-  <div class="card p-3 mb-3">
-    <div class="row">
-      <div class="col-1 text-center">
-        <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
-          <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
-          <span class="font-weight-bold score"><%= post.score %></span>
-          <div class="fa fa-arrow-down downvote <%= is_downvoted post %>"></div>
+<% if @posts.size > 0 %>
+  <% posts.each do |post| %>
+      <div class="card  p-3 mb-3">
+        <div class="row">
+          <div class="col-1 text-center">
+            <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
+              <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
+              <span class="font-weight-bold score"><%= post.score %></span>
+              <div class="fa fa-arrow-down downvote <%= is_downvoted post %>"></div>
+            </div>
+          </div>
+          <div class="col-11">
+            <h4 class= "mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+            <p><small><%= link_to post.community.name, community_path(post.community) %> Posted by <%= link_to post.account.username, profile_path(post.account.username) %> <%= time_ago_in_words post.created_at %> ago</small></p>
+            <p><%= truncate post.body, length: 200 %></p>
+              <%if post.account_id == current_account.id %>
+                                  <%= link_to @post, method: :delete, data: { confirm: "are you sure u want to delete this Post?"} do %>
+                                          <span class="icon">
+                                          <i class="fa fa-trash-o" aria-hidden="true"><p> </p> </i>                             
+                                          </span>  
+                                  <%   end    %>
+                <% else %>
+                    <p class="is-hidden">u cant</p>
+                <%end%>
+          </div>
         </div>
       </div>
-      <div class="col-11">
-        <h4 class= "mb-1"><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
-        <p><small><%= link_to post.community.name, community_path(post.community) %> Posted by <%= link_to post.account.username, profile_path(post.account.username) %> <%= time_ago_in_words post.created_at %> ago</small></p>
-        <p><%= truncate post.body, length: 200 %></p>
-      </div>
-    </div>
-  </div>
+  <% end %>
+<% else %>
+  <p>No posts to display.</p>
 <% end %>

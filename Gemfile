@@ -4,6 +4,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'devise'
+gem 'kaminari'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-google-oauth2'
+gem "chartkick"
+gem "groupdate"
+gem 'activeadmin'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.7'

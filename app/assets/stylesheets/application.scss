@@ -16,3 +16,241 @@
  
  @import "bootstrap/scss/bootstrap";
 
+ .testlet{
+     color:#ffff00;
+    }
+.futer{
+    font-family: 'Coffee At Midnight Demo', sans-serif;
+    color: white;
+}
+.tittle {
+    font-family: 'Coffee At Midnight Demo', sans-serif;
+    color: white;
+    text-decoration: none;
+    &:hover {
+        color: #ffff00;
+        cursor: pointer;
+      }
+    
+}
+.list-group-item {
+    
+    background-color:rgb(50, 49, 49);
+    border-color: white;
+}
+.card {
+    background-color:rgb(50, 49, 49);
+    border-color: white;
+}
+
+ p{
+    color: rgb(249, 249, 249);
+   }
+
+body{
+    background: rgb(50, 49, 49);
+  
+    }
+span{
+    color: white;
+  
+    }
+h2{
+    color:white;
+}
+.form-group{
+    color: white;
+}
+
+.containerr {
+    background-color:#777;
+    padding: 40px;
+    min-height: 600px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    position: relative
+}
+
+#payment {
+    height: 95px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 99%);
+    background-color: #0779e4;
+    padding: 15px 10px 0px
+}
+
+.green-label {
+    font-size: 0.85rem;
+    color: #FFF;
+    background-color: #21bf73;
+    border-radius: 3px;
+    padding: 0px 5px;
+    top: -10px;
+    left: 15px;
+    z-index: 100;
+    position: absolute
+}
+
+
+
+
+#over {
+    position: relative;
+    z-index: 1000
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a:hover .fa-arrow-right {
+    transform: translate(5px)
+}
+
+.container .wrapper {
+    padding: 40px 20px;
+    width: 350px;
+    height: 640px;
+    position: absolute;
+    left: 30%;
+    top: -62px
+}
+
+.fa-arrow-right {
+    padding-left: 2px;
+    transition: all .3s ease-in
+}
+
+.text-lighter {
+    color: #ddd;
+    font-size: 0.89rem
+}
+
+
+
+.btn.d-flex {
+    border: 1px solid #0779e4;
+    color: #0779e4;
+    font-weight: 600;
+    background-color: #f0f5fa
+}
+
+.btn.d-flex:hover {
+    background-color: #dfedfc;
+    color: #016acc
+}
+
+.bordered {
+    border: 1px solid #ddd
+}
+
+.border-top {
+    position: relative
+}
+
+.bg-md-white {
+    background-color: #fff
+}
+
+.border-top:after {
+    content: 'or';
+    position: absolute;
+    padding: 0px 10px;
+    background-color: #fff;
+    top: -13px;
+    left: 40%;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem
+}
+
+label {
+    color: #777;
+    font-size: 0.86rem;
+    margin: 0
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+    border-radius: 0px
+}
+
+.form-control:focus {
+    box-shadow: none
+}
+
+.caption {
+    font-size: 0.81rem
+}
+
+.mt-auto {
+    font-size: 0.9rem
+}
+
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ec0101, #f7e92b);
+    border-radius: 6px
+}
+
+@media(min-width:992px) and (max-width: 1199px) {
+    .container .wrapper {
+        left: 18%
+    }
+}
+
+@media(min-width:768px) and (max-width: 991px) {
+    .container .wrapper {
+        left: 0%
+    }
+}
+
+@media(max-width:767px) {
+    .container {
+        padding: 20px
+    }
+
+    .container .wrapper {
+        position: unset;
+        width: max-content;
+        display: block
+    }
+
+    .bordered {
+        border: none
+    }
+
+    .bg-md-white {
+        background-color: inherit
+    }
+
+    .border-top:after {
+        background-color: #f7f7f74d
+    }
+
+    .form-control {
+        background-color: inherit
+    }
+}
+
+@media(max-width:575px) {
+    .container {
+        padding: 20px;
+        margin: 10px
+    }
+
+    .container .wrapper {
+        width: 400px
+    }
+}
+
+@media(max-width: 424px) {
+    .container .wrapper {
+        width: fit-content;
+        padding: 0
+    }
+}

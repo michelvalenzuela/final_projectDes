@@ -1,6 +1,6 @@
 <div class="row mb-4">
   <div class="col-sm-8">
-    <h3><%= @community.name %></h3>
+    <h3 style="color:white;"><%= @community.name %></h3>
   </div>
   <div class="col-sm-4">
      <% if @is_subscribed %>
@@ -20,6 +20,15 @@
         <p class="h5">About this community</p>
         <p class="mt-2"><%= @community.summary %></p>
         <p><%= pluralize @subscriber_count, "member" %></p>
+                  <%if @community.account_id == current_account.id %>
+                        <%= link_to @community, method: :delete, data: { confirm: "are you sure u want to delete this Community?"} do %>
+                           <span class="icon">
+                              <i class="fa fa-trash-o" aria-hidden="true"><p> </p> </i>                             
+                           </span>  
+                        <%   end    %>
+                  <% else %>
+                    <p class="is-hidden">u cant</p>
+                <%end%>
     </div>
      <small>
       <%= simple_format @community.rules %>
