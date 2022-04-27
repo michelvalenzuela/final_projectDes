@@ -1,24 +1,8 @@
 # README
+El Panel de Admin se hizo con la gema Active Admin, para su funcionamiento ver el seed en defecto para su usuario, y logear primero en la pagina principal..
+luego ir a localhost:3000/admin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es un proyecto final del bootcamp FullStackRoR de Desafio Latam 
+soy de la generacion G49.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
